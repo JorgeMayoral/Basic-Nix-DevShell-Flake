@@ -5,7 +5,7 @@
 Initialize flake in current directory:
 
 ```bash
-nix flake init -t github:JorgeMayoral/Basic-Nix-DevShell-Flake 
+nix flake init -t github:JorgeMayoral/basic-nix-devshell-flake 
 ```
 
 Enter the devshell:
