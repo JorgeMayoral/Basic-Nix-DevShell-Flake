@@ -1,26 +1,14 @@
 {
-  description = "Basic Nix DevShell Flake";
+  description = "A basic Nix DevShell flake template";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-  };
-
-  outputs = {
-    self,
-    nixpkgs,
-  }: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    devShells.${system}.default = pkgs.mkShell {
-      nativeBuildInputs = with pkgs; [
-        # Add your devShell dependencies here
-        # nodejs
-      ];
-
-      shellHook = ''
-        # Add your shellHook commands here
-      '';
+  outputs = {self}: {
+    templates = {
+      default = {
+        path = ./default;
+        description = "Basic Nix DevShell Flake";
+      };
     };
+
+    defaultTemplate = self.templates.default;
   };
 }
