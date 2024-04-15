@@ -2,7 +2,7 @@
   description = "Basic Nix DevShell Flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs = {
@@ -15,11 +15,14 @@
     devShells.${system}.default = pkgs.mkShell {
       nativeBuildInputs = with pkgs; [
         # Add your devShell dependencies here
-        # nodejs
+        nushell
       ];
 
       shellHook = ''
         # Add your shellHook commands here
+        echo "Hello from Nix DevShell!"
+        echo "nushell: $(nu --version)"
+        exec nu
       '';
     };
   };
