@@ -22,3 +22,4 @@ All templates include `nushell` as shell.
 |------|-------------|
 | [default](./default/) | Default empty template |
 | [nodejs](./nodejs/) | Template with Node.js |
+| [rust](./rust/) | Simple template with Rust |

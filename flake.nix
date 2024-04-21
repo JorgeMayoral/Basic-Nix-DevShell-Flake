@@ -11,6 +11,10 @@
         path = ./nodejs;
         description = "Node.js Nix DevShell Flake";
       };
+      rust = {
+        path = ./rust;
+        description = "Rust Nix DevShell Flake";
+      };
     };
 
     defaultTemplate = self.templates.default;
